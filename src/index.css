@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    body {
+        @apply font-[Montserrat];
+    }
+}
+
+button {
+    background: linear-gradient(to right, #903AFF, #D434FE, #FE34B9);
+    padding: 8px 32px;
+    border-radius: 5px;
+    align-self: center;
+}
+
+button:hover {
+    background-color: none;
+    border: 1px;
+    border-color: linear-gradient(to right, #903AFF, #D434FE, #FE34B9);
+}
+
+.App {
+    overflow-x: hidden;
+}
+
+/* FAQ */
+.FAQ {
+    padding: 50px 0;
+}
+
+.faq-main {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.accordion {
+    display: flex;
+    justify-content: space-between;
+}
+
+.accordion::after {
+    content: '\02795';
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+.active::after {
+    content: '\2796';
+}
+
+.accordion>img {
+    align-self: center;
+    cursor: pointer;
+}
+
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: height ease-in-out 0.5s;
+}
+
+.accordion.active+.panel {
+    max-height: max-content;
+}
+
+hr {
+ color: #D434FE;
+}
+
